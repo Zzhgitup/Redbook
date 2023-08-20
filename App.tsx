@@ -12,8 +12,8 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native'; //导航栈
 import {StatusBar} from 'react-native';
 import {TransitionPresets, createStackNavigator} from '@react-navigation/stack';
-import PageA from './src/components/PageA';
-import Pageb from './src/components/PageB';
+import Welcome from './src/view/Welcome';
+import Login from './src/view/login';
 const Stack = createStackNavigator();
 function App(): JSX.Element {
   return (
@@ -21,20 +21,21 @@ function App(): JSX.Element {
       <StatusBar barStyle={'default'} backgroundColor={'white'} />
       <NavigationContainer>
         {/* 路由栈 */}
-        <Stack.Navigator initialRouteName="PageA">
+        <Stack.Navigator initialRouteName="welcome">
           <Stack.Screen
-            name="PageA"
-            component={PageA}
+            name="welcome"
+            component={Welcome}
             options={{
-              headerShown: true,
+              headerShown: false,
               ...TransitionPresets.FadeFromBottomAndroid,
             }}
           />
           <Stack.Screen
-            name="PageB"
-            component={Pageb}
+            name="Login"
+            component={Login}
             options={{
-              ...TransitionPresets.SlideFromRightIOS,
+              headerShown: false,
+              ...TransitionPresets.ScaleFromCenterAndroid,
             }}
           />
         </Stack.Navigator>
