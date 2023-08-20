@@ -1,0 +1,9 @@
+/node_moudles/**
+/public/**
+/build/**
+/__tests__/**
+/.bundle/**
+/.idea/**
+/.vscode/**
+/android/**
+/ios/**
