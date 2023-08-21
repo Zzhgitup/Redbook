@@ -1,5 +1,5 @@
 import React, {FC, useEffect} from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image, Text} from 'react-native';
 import {icon_logo_main} from '../../asset/date/image';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -16,6 +16,7 @@ const Welcome: FC<Props> = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.logoimg} source={icon_logo_main} />
+      <Text style={styles.name}>欢迎尊贵的无上至尊！</Text>
     </View>
   );
 };
@@ -25,6 +26,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     height: '100%',
+  },
+  name: {
+    fontSize: 24,
+    marginTop: 200,
   },
   logoimg: {
     width: 200,

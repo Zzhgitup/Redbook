@@ -14,11 +14,12 @@ import {StatusBar} from 'react-native';
 import {TransitionPresets, createStackNavigator} from '@react-navigation/stack';
 import Welcome from './src/view/Welcome';
 import Login from './src/view/login';
+import Home from './src/view/Home';
 const Stack = createStackNavigator();
 function App(): JSX.Element {
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle={'default'} backgroundColor={'white'} />
+      <StatusBar barStyle="dark-content" backgroundColor={'transparent'} />
       <NavigationContainer>
         {/* 路由栈 */}
         <Stack.Navigator initialRouteName="welcome">
@@ -27,7 +28,7 @@ function App(): JSX.Element {
             component={Welcome}
             options={{
               headerShown: false,
-              ...TransitionPresets.FadeFromBottomAndroid,
+              ...TransitionPresets.ModalSlideFromBottomIOS,
             }}
           />
           <Stack.Screen
@@ -35,7 +36,15 @@ function App(): JSX.Element {
             component={Login}
             options={{
               headerShown: false,
-              ...TransitionPresets.ScaleFromCenterAndroid,
+              ...TransitionPresets.SlideFromRightIOS,
+            }}
+          />
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{
+              headerShown: false,
+              ...TransitionPresets.SlideFromRightIOS,
             }}
           />
         </Stack.Navigator>
