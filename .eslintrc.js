@@ -3,5 +3,7 @@ module.exports = {
   extends: '@react-native',
   rules: {
     '@typescript-eslint/no-unused-vars': 'off',
+    'react-native/no-inline-styles': 'off',
+    'react/no-unstable-nested-components': 'off',
   },
 };

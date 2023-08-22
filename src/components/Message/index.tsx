@@ -1,14 +1,19 @@
-import {View, Text} from 'react-native';
-import React from 'react';
-
-type Props = {};
-
-const Message = (props: Props) => {
+import React, {FC} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+interface Props {
+  name?: string;
+}
+const Message: FC<Props> = () => {
   return (
-    <View>
-      <Text>Message</Text>
+    <View style={styles.container}>
+      <Text>Hello</Text>
     </View>
   );
 };
-
+const styles = StyleSheet.create({
+  container: {
+    width: '100%',
+    height: '100%',
+  },
+});
 export default Message;
