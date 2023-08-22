@@ -12,5 +12,5 @@ if (process.env.NODE_ENV == 'development') {
 }
 export { BASE_URL, TIMEOUT }; */
 /* console.log(process.env.REACT_APP_BASE_URL); */
-export const BASE_URL = 'http://localhost:5173';
+export const BASE_URL = 'http://10.102.244.3:7001';
 export const TIMEOUT = 10000;

@@ -1,5 +1,5 @@
-import React, {FC, useCallback, useState} from 'react';
-import {View, StyleSheet, Image, Text, Button} from 'react-native';
+import React, {FC, useCallback, useEffect, useState} from 'react';
+import {View, StyleSheet, Image, Text, ToastAndroid} from 'react-native';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -17,7 +17,9 @@ import {
   wechat,
 } from '../../asset/date/image';
 import {Handerphone, backHander} from '../../utils/Phonehandler';
-import {login} from './server';
+import {getgoods} from '../../server/modules/Goods';
+import {login} from '../../server/modules/user';
+import UserStore from '../../store/UserStore';
 interface Props {
   name?: string;
 }
@@ -28,6 +30,7 @@ const Login: FC<Props> = () => {
   const [telphone, setphone] = useState('');
   const [password, setPassword] = useState('');
   const [select, setselect] = useState<boolean>(false);
+
   const protiext = () => {
     const styles = StyleSheet.create({
       protoco: {
@@ -363,12 +366,16 @@ const Login: FC<Props> = () => {
             style={[styles.loginbt, canlogin() ? null : styles.unsatisfied]}
             onPress={() => {
               if (!canlogin()) {
-                console.log('不满足');
+                ToastAndroid.show('请填写对应信息', 1000);
               } else {
-                navigaytion.push('Home');
-                console.log('手机号', backHander(telphone));
-                login().then(() => {});
-                console.log('密码', password);
+                console.log(backHander(telphone), password);
+                UserStore.login(backHander(telphone), password, res => {
+                  if (res) {
+                    navigaytion.push('Home');
+                  } else {
+                    ToastAndroid.show('登录失败', 1000);
+                  }
+                });
               }
             }}>
             <Text style={[styles.textlogin]}>登录</Text>

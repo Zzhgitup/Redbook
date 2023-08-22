@@ -24,7 +24,7 @@ class HYrequest {
       err => err,
     );
     //拓展拦截器
-    if (config.interceptor) {
+    /*    if (config.interceptor) {
       this.instance.interceptors.request.use(
         config.interceptor?.requestSuccessFn,
         config.interceptor?.requestFailFn,
@@ -33,7 +33,7 @@ class HYrequest {
         config.interceptor?.responseSuccessFn,
         config.interceptor?.responseFailFn,
       );
-    }
+    } */
   }
   //封装网络请求的方法  精细化处理，单个请求也能加拦截器
   myrequest<T = any>(config: AxiosRequestConfig2<T>) {
