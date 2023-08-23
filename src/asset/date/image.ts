@@ -19,6 +19,8 @@ import icon_tab_home_normal from '../icon_tab_home_normal.png';
 import icon_tab_publish from '../icon_tab_publish.png';
 import icon_heart_empty from '../icon_heart_empty.png';
 import icon_heart from '../icon_heart.png';
+import icon_daily from '../icon_daily.png';
+import icon_search from '../icon_search.png';
 export {
   icon_logo_main,
   icon_unselected,
@@ -41,4 +43,6 @@ export {
   icon_tab_publish,
   icon_heart_empty,
   icon_heart,
+  icon_daily,
+  icon_search,
 };

@@ -13,7 +13,7 @@ import Shop from './C_child/Shop/Shop';
 import MainTab from './C_child/mainTab/index';
 import Message from './C_child/Message/index';
 import Mine from './C_child/Mine/index';
-import {icon_tab_publish} from '../../asset/date/image';
+import {icon_tab_publish} from '../../asset/icon_tab_publish.png';
 const BottomTab = createBottomTabNavigator();
 interface Props {
   name?: string;

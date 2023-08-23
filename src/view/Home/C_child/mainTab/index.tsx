@@ -3,8 +3,9 @@ import {View, Text, StyleSheet, Dimensions, Image} from 'react-native';
 import {observer, useLocalStore} from 'mobx-react';
 import HomeStorage from './HomeStore';
 import ResizeImg from './ResizeImag';
-import FlowList from '../flowlist/FlowList.js';
+import FlowList from '../../../../components/flowlist/FlowList.js';
 import Headr from './C_child/Head';
+import MaintaBar from '../../../../components/MainTaber/index';
 interface Props {
   name?: string;
 }
@@ -51,21 +52,9 @@ const MainTab: FC<Props> = observer(() => {
   const loadnewDate = () => {
     listhome.requestHomelist();
   };
-  const Listfooter = () => {
-    const styles = StyleSheet.create({
-      contrains: {
-        width: 300,
-        height: 300,
-      },
-    });
-    return (
-      <View style={styles.contrains}>
-        <Headr size={50} defaultfoucus={false} />
-      </View>
-    );
-  };
   return (
     <View style={styles.container}>
+      <MaintaBar />
       <FlowList
         style={styles.fastlist}
         data={listhome.Homelist}
@@ -76,7 +65,6 @@ const MainTab: FC<Props> = observer(() => {
         onEndReached={loadnewDate} //触发更新
         refreshing={listhome.refershing} //是否正在加载
         onRefresh={refreshing}
-        ListFooterComponent={Listfooter}
       />
     </View>
   );

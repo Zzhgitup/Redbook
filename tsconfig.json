@@ -105,12 +105,7 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
     /* 配置基础地址 */
-    "baseUrl": "./src",
-    /* 配置路径别名 */
-    "paths": {
-      "*": ["src/*"]
-    }
   }
 }

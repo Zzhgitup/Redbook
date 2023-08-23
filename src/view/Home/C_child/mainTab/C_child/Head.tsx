@@ -1,7 +1,7 @@
 import React, {FC, useRef, useState} from 'react';
 import {View, Text, StyleSheet, Image, Animated} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {icon_heart, icon_heart_empty} from '../../../asset/date/image';
+import {icon_heart, icon_heart_empty} from '../../../../../asset/date/image';
 interface Props {
   name?: string;
   defaultfoucus: boolean;
