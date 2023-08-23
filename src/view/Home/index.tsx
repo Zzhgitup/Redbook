@@ -1,20 +1,18 @@
 import React, {FC, useRef} from 'react';
-import {View, StyleSheet, Image, Text, Animated} from 'react-native';
+import {View, StyleSheet, Image, Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {
   createBottomTabNavigator,
   BottomTabBarProps,
 } from '@react-navigation/bottom-tabs';
 import {
-  ImageLibraryOptions,
   ImagePickerResponse,
   launchImageLibrary,
 } from 'react-native-image-picker';
-import Shop from '../../components/Shop/Shop';
-import MainTab from '../../components/mainTab';
-import Message from '../../components/Message';
-import Mine from '../../components/Mine';
-
+import Shop from './C_child/Shop/Shop';
+import MainTab from './C_child/mainTab/index';
+import Message from './C_child/Message/index';
+import Mine from './C_child/Mine/index';
 import {icon_tab_publish} from '../../asset/date/image';
 const BottomTab = createBottomTabNavigator();
 interface Props {
@@ -83,29 +81,29 @@ const Home: FC<Props> = () => {
         // eslint-disable-next-line react/no-unstable-nested-components
         tabBar={props => <Barstyle {...props} />}>
         <BottomTab.Screen
-          name="Shop"
-          component={Shop}
-          options={{title: '商城'}}
-        />
-        <BottomTab.Screen
           name="Main"
           component={MainTab}
-          options={{title: '发现'}}
+          options={{title: '首页', headerShown: false}}
+        />
+        <BottomTab.Screen
+          name="Shop"
+          component={Shop}
+          options={{title: '购物', headerShown: false}}
         />
         <BottomTab.Screen
           name="publish"
           component={MainTab}
-          options={{title: 'publish'}}
+          options={{title: 'publish', headerShown: false}}
         />
         <BottomTab.Screen
           name="message"
           component={Message}
-          options={{title: '消息'}}
+          options={{title: '消息', headerShown: false}}
         />
         <BottomTab.Screen
           name="Mine"
           component={Mine}
-          options={{title: '我'}}
+          options={{title: '我', headerShown: false}}
         />
       </BottomTab.Navigator>
     </View>

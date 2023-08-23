@@ -17,6 +17,8 @@ import icon_tab_shop_normal from '../icon_tab_shop_normal.png';
 import icon_tab_shop_selected from '../icon_tab_shop_selected.png';
 import icon_tab_home_normal from '../icon_tab_home_normal.png';
 import icon_tab_publish from '../icon_tab_publish.png';
+import icon_heart_empty from '../icon_heart_empty.png';
+import icon_heart from '../icon_heart.png';
 export {
   icon_logo_main,
   icon_unselected,
@@ -37,4 +39,6 @@ export {
   icon_tab_shop_selected,
   icon_tab_home_normal,
   icon_tab_publish,
+  icon_heart_empty,
+  icon_heart,
 };

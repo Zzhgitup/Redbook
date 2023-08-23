@@ -322,6 +322,7 @@ const Login: FC<Props> = () => {
             <TextInput
               value={telphone}
               maxLength={13}
+              // eslint-disable-next-line @typescript-eslint/no-shadow
               onChangeText={(telphone: string) =>
                 setphone(Handerphone(telphone))
               }
