@@ -20,6 +20,7 @@ import {Handerphone, backHander} from '../../utils/Phonehandler';
 import {getgoods} from '../../server/modules/Goods';
 import {login} from '../../server/modules/user';
 import UserStore from '../../store/UserStore';
+import Toast from '../../components/widget/Toast';
 interface Props {
   name?: string;
 }
@@ -367,14 +368,14 @@ const Login: FC<Props> = () => {
             style={[styles.loginbt, canlogin() ? null : styles.unsatisfied]}
             onPress={() => {
               if (!canlogin()) {
-                ToastAndroid.show('请填写对应信息', 1000);
+                Toast.show('请填写对应信息', 1000);
               } else {
                 console.log(backHander(telphone), password);
                 UserStore.login(backHander(telphone), password, res => {
                   if (res) {
                     navigaytion.push('Home');
                   } else {
-                    ToastAndroid.show('登录失败', 1000);
+                    Toast.show('登录失败', 1000);
                   }
                 });
               }

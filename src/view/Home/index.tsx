@@ -13,12 +13,13 @@ import Shop from './C_child/Shop/Shop';
 import MainTab from './C_child/mainTab/index';
 import Message from './C_child/Message/index';
 import Mine from './C_child/Mine/index';
-import {icon_tab_publish} from '../../asset/icon_tab_publish.png';
+import {icon_tab_publish} from '../../asset/date/image';
 const BottomTab = createBottomTabNavigator();
 interface Props {
   name?: string;
 }
 const Home: FC<Props> = () => {
+  //打开相册测试
   const selectImg = (res: ImagePickerResponse) => {
     const {assets} = res;
     if (!assets?.length) {
@@ -27,6 +28,7 @@ const Home: FC<Props> = () => {
     const {fileName, fileSize, width, height, uri} = assets[0];
     console.log(fileName, fileName, width, height, uri);
   };
+  //渲染自定义菜单栏
   const Barstyle = ({state, descriptors, navigation}: BottomTabBarProps) => {
     const {routes, index} = state;
     return (

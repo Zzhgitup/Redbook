@@ -21,6 +21,8 @@ import icon_heart_empty from '../icon_heart_empty.png';
 import icon_heart from '../icon_heart.png';
 import icon_daily from '../icon_daily.png';
 import icon_search from '../icon_search.png';
+import icon_arrow from '../icon_arrow.png';
+import icon_share from '../icon_share.png';
 export {
   icon_logo_main,
   icon_unselected,
@@ -45,4 +47,6 @@ export {
   icon_heart,
   icon_daily,
   icon_search,
+  icon_arrow,
+  icon_share,
 };

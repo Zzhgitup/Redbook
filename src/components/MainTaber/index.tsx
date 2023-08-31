@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
   },
   barimg: {
     height: 50,
+    width: 50,
     transform: [{scale: 0.7}],
     resizeMode: 'contain',
   },

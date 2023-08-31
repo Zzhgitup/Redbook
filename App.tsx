@@ -15,6 +15,7 @@ import {TransitionPresets, createStackNavigator} from '@react-navigation/stack';
 import Welcome from './src/view/Welcome';
 import Login from './src/view/login';
 import Home from './src/view/Home';
+import ArticelDetail from './src/view/ArticelDetail';
 const Stack = createStackNavigator();
 function App(): JSX.Element {
   return (
@@ -42,6 +43,14 @@ function App(): JSX.Element {
           <Stack.Screen
             name="Home"
             component={Home}
+            options={{
+              headerShown: false,
+              ...TransitionPresets.SlideFromRightIOS,
+            }}
+          />
+          <Stack.Screen
+            name="article"
+            component={ArticelDetail}
             options={{
               headerShown: false,
               ...TransitionPresets.SlideFromRightIOS,

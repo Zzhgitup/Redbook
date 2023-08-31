@@ -1,5 +1,6 @@
 import {login} from '../server/modules/user';
-import {save} from '../utils/Storage';
+import {load, save} from '../utils/Storage';
+import Loading from '../components/widget/Loading';
 import {flow} from 'mobx';
 class Userstore {
   useinfo: any;
@@ -10,13 +11,17 @@ class Userstore {
     callback: (res: boolean) => any,
   ) {
     try {
+      Loading.show('正在登录');
       const data = yield login(name, pwd);
       if (data.code === 200) {
         this.useinfo = data.msg;
         //登录成功
+        console.log(data);
         save('userinfo', JSON.stringify(this.useinfo));
         callback(true);
+        Loading.hide();
       } else {
+        console.log(data);
         this.useinfo = undefined;
         callback(false);
       }
